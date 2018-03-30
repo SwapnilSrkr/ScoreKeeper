@@ -27,6 +27,77 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState != null) {
+            scoreTeamA = savedInstanceState.getInt("scoreTeamA");
+            scoreTeamB = savedInstanceState.getInt("scoreTeamB");
+            foulTeamA = savedInstanceState.getInt("foulTeamA");
+            foulTeamB = savedInstanceState.getInt("foulTeamB");
+            yellowTeamA = savedInstanceState.getInt("yellowTeamA");
+            yellowTeamB = savedInstanceState.getInt("yellowTeamB");
+            redTeamA = savedInstanceState.getInt("redTeamA");
+            redTeamB = savedInstanceState.getInt("redTeamB");
+            cornerTeamA = savedInstanceState.getInt("cornerTeamA");
+            cornerTeamB = savedInstanceState.getInt("cornerTeamB");
+            cornerTeamA = savedInstanceState.getInt("cornerTeamA");
+            cornerTeamB = savedInstanceState.getInt("cornerTeamB");
+            offsideTeamA = savedInstanceState.getInt("offsideTeamA");
+            offsideTeamB = savedInstanceState.getInt("offsideTeamB");
+        } else {
+            scoreTeamA = 0;
+            scoreTeamB = 0;
+            foulTeamA = 0;
+            yellowTeamA = 0;
+            redTeamA = 0;
+            cornerTeamA = 0;
+            foulTeamB = 0;
+            yellowTeamB = 0;
+            redTeamB = 0;
+            cornerTeamB = 0;
+            offsideTeamA = 0;
+            offsideTeamB = 0;
+        }
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putInt("scoreTeamA", scoreTeamA);
+        savedInstanceState.putInt("scoreTeamB", scoreTeamB);
+        savedInstanceState.putInt("foulTeamA", foulTeamA);
+        savedInstanceState.putInt("foulTeamB", foulTeamB);
+        savedInstanceState.putInt("yellowTeamA", yellowTeamA);
+        savedInstanceState.putInt("yellowTeamB", yellowTeamB);
+        savedInstanceState.putInt("redTeamA", redTeamA);
+        savedInstanceState.putInt("redTeamB", redTeamB);
+        savedInstanceState.putInt("cornerTeamA", cornerTeamA);
+        savedInstanceState.putInt("cornerTeamB", cornerTeamB);
+        savedInstanceState.putInt("offsideTeamA", offsideTeamA);
+        savedInstanceState.putInt("offsideTeamB", offsideTeamB);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        scoreTeamA = savedInstanceState.getInt("scoreTeamA");
+        scoreTeamB = savedInstanceState.getInt("scoreTeamB");
+        foulTeamA = savedInstanceState.getInt("foulTeamA");
+        foulTeamB = savedInstanceState.getInt("foulTeamB");
+        yellowTeamA = savedInstanceState.getInt("yellowTeamA");
+        yellowTeamB = savedInstanceState.getInt("yellowTeamB");
+        redTeamA = savedInstanceState.getInt("redTeamA");
+        redTeamB = savedInstanceState.getInt("redTeamB");
+        cornerTeamA = savedInstanceState.getInt("cornerTeamA");
+        cornerTeamB = savedInstanceState.getInt("cornerTeamB");
+        cornerTeamA = savedInstanceState.getInt("cornerTeamA");
+        cornerTeamB = savedInstanceState.getInt("cornerTeamB");
+        offsideTeamA = savedInstanceState.getInt("offsideTeamA");
+        offsideTeamB = savedInstanceState.getInt("offsideTeamB");
     }
 
     public void addOneForTeamA(View v) {
